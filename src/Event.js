@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Moment from 'react-moment';
 
 class Event extends Component {
     toggleEventDetails = () => {
@@ -12,9 +13,11 @@ class Event extends Component {
     return (
         <div className="event">
             <h1 className="event-title">{event.summary}</h1>
-            <p className="event-info">
-            Time/date: {event.start.dateTime} Time zone: {event.start.timeZone} Location: {event.location}
-          </p>
+            <span className="event-info">
+            <h5>Start:</h5> <Moment>{event.start.dateTime}</Moment> 
+            <h5>Location:</h5>{event.location}
+          </span>
+          <br></br>
           {!this.state.show ? (
             <button
               className="showDetails-button"
@@ -33,8 +36,8 @@ class Event extends Component {
           {this.state.show && (
           <div className="expandedEvent">
             <p className="event-description">{event.description}</p>
-            <h3>Ends: </h3><p className="event-end">{event.end.dateTime}</p>
-            <h3>Creator: </h3><p>{event.creator.email}</p>
+            <h5>End: </h5><p className="event-end"><Moment>{event.end.dateTime}</Moment></p>
+            <h5>Creator: </h5><p>{event.creator.email}</p>
             <a
                 href={event.htmlLink}
                 target="_blank"
