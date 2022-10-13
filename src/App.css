@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url(https://fonts.googleapis.com/css?family=Pacifico:400);
+
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 0% 5%;
 }
 
 .App * {
@@ -24,8 +26,23 @@ p {
   display: block;
 }
 
-input[type="text"],
-input[type="number"] {
+.logo {
+  font-family: 'Pacifico', cursive;
+  color: #0F8;
+  font-size: 40px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 70px;
+  width: 200px;
+  z-index: 1;
+  border-radius: 0% 0% 30% 30%;
+  background-color: #fff;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+input[type="text"] {
+  margin-top: 150px;
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
@@ -34,6 +51,19 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+}
+
+input[type="number"] {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 20px;
+  align-self: center;
+  height: 38px;
+  width: 3rem;
 }
 
 .city {
@@ -55,7 +85,7 @@ input[type="number"] {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 43px;
+  top: 185px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -78,11 +108,12 @@ input[type="number"] {
 
 .event {
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
-  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin: auto auto 20px auto;
+  width: 35em;
 }
 
 .details-btn {

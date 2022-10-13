@@ -13,7 +13,7 @@ class Event extends Component {
         <div className="event">
             <h1 className="event-title">{event.summary}</h1>
             <p className="event-info">
-            {event.start.dateTime} {event.start.timeZone} {event.location}
+            Time/date: {event.start.dateTime} Time zone: {event.start.timeZone} Location: {event.location}
           </p>
           {!this.state.show ? (
             <button
