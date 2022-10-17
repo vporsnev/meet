@@ -20,14 +20,14 @@ class Event extends Component {
           <br></br>
           {!this.state.show ? (
             <button
-              className="showDetails-button"
+              className="details-button"
               onClick={this.toggleEventDetails}
             >
               Show Details
             </button>
           ) : (
             <button
-              className="hideDetails-button"
+              className="details-button"
               onClick={this.toggleEventDetails}
             >
               Hide Details
@@ -41,6 +41,7 @@ class Event extends Component {
             <a
                 href={event.htmlLink}
                 target="_blank"
+                rel="noreferrer"
                 className="event-link"
               >
                 Event on Google Calendar
