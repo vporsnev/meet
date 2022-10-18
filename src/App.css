@@ -24,7 +24,7 @@ h5 {
 }
 
 button {
-    background-color: #0F8;
+    background-color: rgb(136, 213, 176);
     border: 0;
     border-radius: 100px;
     color: #ffffff;
@@ -50,21 +50,13 @@ button {
 
 .logo {
   font-family: 'Pacifico', cursive;
-  color: #0F8;
-  font-size: 40px;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 70px;
-  width: 200px;
-  z-index: 1;
-  border-radius: 0% 0% 30% 30%;
-  background-color: #fff;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  color: rgb(136, 213, 176);
+  font-size: 60px;
+  text-shadow: 3px 3px 4px #777
 }
 
 input[type="text"] {
-  margin-top: 150px;
+  margin-top: 70px;
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
@@ -142,7 +134,7 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  width: 30em;
+  max-width: 30em;
   margin: 0 auto 0 auto
 }
 
@@ -266,5 +258,6 @@ input[type="number"] {
 @media only screen and (max-width: 1077px) {
   .EventList {
     grid-template-columns: 1fr;
+    margin: auto;
   }
 }
