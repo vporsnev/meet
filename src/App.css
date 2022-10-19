@@ -125,7 +125,7 @@ input[type="number"] {
 .EventList {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .event {
@@ -257,6 +257,13 @@ input[type="number"] {
 }
 
 @media only screen and (max-width: 1077px) {
+  .EventList {
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 950px) {
   .EventList {
     grid-template-columns: 1fr;
     margin: auto;
