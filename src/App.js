@@ -15,10 +15,26 @@ class App extends Component {
     numOfEvents: 32
   }
 
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ 
+          events: events.slice(0, this.state.numOfEvents), 
+          locations: extractLocations(events)
+      });
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.mounted = false;
+  }
+
   updateEvents = (location, maxNumEvents) => {
     if (maxNumEvents === undefined) {
         maxNumEvents = this.state.numOfEvents;
-    } else(
+    } else (
         this.setState({ numOfEvents: maxNumEvents })
     )
     if (location === undefined) {
@@ -36,28 +52,12 @@ class App extends Component {
       });
     }
 
-    componentDidMount() {
-      this.mounted = true;
-      getEvents().then((events) => {
-        if (this.mounted) {
-          this.setState({ 
-            events: events.slice(0, this.state.numOfEvents), 
-            locations: extractLocations(events)
-        });
-        }
-      });
-    }
-  
-    componentWillUnmount(){
-      this.mounted = false;
-    }
-
   render() {
     return (
       <div className="App">
         <div className="logo">meet</div>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents}/>
+        <NumberOfEvents numOfEvents={this.state.numOfEvents} updateEvents={this.updateEvents}/>
         <EventList events={this.state.events}>Events in {this.state.locations}</EventList>
       </div>
     );

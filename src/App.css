@@ -174,9 +174,17 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
-  position: fixed;
+.infoAlert {
+  color: blue;
+  position: absolute;
   top: 20px;
+}
+
+.errorAlert {
+  color: red;
+  position: absolute;
+  top: 270px;
+  left: 580px;
 }
 
 .data-vis-wrapper {
