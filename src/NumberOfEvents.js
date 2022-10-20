@@ -15,7 +15,7 @@ class NumberOfEvents extends Component {
     } else {
       this.setState({
         numOfEvents: 32,
-        errText:'Please enter a number between 1 - 32.'
+        errText:'Select number from 1 to 32'
       });
     }
     this.props.updateEvents(undefined, changeValue);
