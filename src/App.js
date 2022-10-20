@@ -15,20 +15,22 @@ class App extends Component {
     numberOfEvents: 32
   }
 
-    updateEvents = (location, eventCount) => {
-      if (location === undefined) {
-        location = this.state.seletedLocation;
-      }
-      if (eventCount === undefined) {
-        eventCount = this.state.numberOfEvents;
-      }
+  updateEvents = (location, maxNumEvents) => {
+    if (maxNumEvents === undefined) {
+        maxNumEvents = this.state.numberOfEvents;
+    } else(
+        this.setState({ numberOfEvents: maxNumEvents })
+    )
+    if (location === undefined) {
+        location = this.state.locationSelected;
+    }
       getEvents().then((events) => {
         const locationEvents = (location === 'all') ?
           events :
           events.filter((event) => event.location === location);
         this.setState({
-          events: locationEvents.slice(0, eventCount),
-          numberOfEvents: eventCount,
+          events: locationEvents.slice(0, maxNumEvents),
+          numberOfEvents: maxNumEvents,
           selectedLocation: location
         });
       });
