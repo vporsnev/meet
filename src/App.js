@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import WelcomeScreen from './WelcomeScreen';
+import { OfflineAlert } from './Alert';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 
@@ -29,8 +30,18 @@ class App extends Component {
         this.setState({ 
           events: events.slice(0, this.state.numOfEvents), 
           locations: extractLocations(events)
-      });
+        });
       }
+    });
+    }
+    if (!navigator.onLine) {
+    this.setState({
+      warningText:
+        "No internet connection. The data was loaded from previous cached session",
+    });
+    } else {
+    this.setState({
+      warningText: '',
     });
   }
 }
@@ -65,6 +76,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="logo">meet</div>
+        <OfflineAlert text={offlineText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numOfEvents={this.state.numOfEvents} updateEvents={this.updateEvents}/>
         <EventList events={this.state.events} />
