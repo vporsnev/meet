@@ -36,12 +36,12 @@ class App extends Component {
     }
     if (!navigator.onLine) {
     this.setState({
-      warningText:
+      offlineText:
         "No internet connection. The data was loaded from previous cached session",
     });
     } else {
     this.setState({
-      warningText: '',
+      offlineText: '',
     });
   }
 }
