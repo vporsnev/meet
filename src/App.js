@@ -76,7 +76,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="logo">meet</div>
-        <OfflineAlert text={offlineText} />
+        <OfflineAlert text={this.state.offlineText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numOfEvents={this.state.numOfEvents} updateEvents={this.updateEvents}/>
         <EventList events={this.state.events} />
