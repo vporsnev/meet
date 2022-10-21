@@ -19,16 +19,16 @@
   };
 
   export const getEvents = async () => {
-    nProgress.start();
+    NProgress.start();
   
     if (window.location.href.startsWith('http://localhost')) {
-      nProgress.done();
+      NProgress.done();
       return mockData;
     }
   
     if (!navigator.onLine) {
       const data = localStorage.getItem('lastEvents');
-      nProgress.done();
+      NProgress.done();
       return data ? JSON.parse(data).events : [];
     }
   
