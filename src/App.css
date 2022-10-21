@@ -52,7 +52,7 @@ button {
   font-family: 'Pacifico', cursive;
   color: rgb(136, 213, 176);
   font-size: 60px;
-  text-shadow: 3px 3px 4px #777
+  text-shadow: 3px 3px 4px #777;
 }
 
 input[type="text"] {
