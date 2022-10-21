@@ -28,7 +28,7 @@ o.svg"
         </div>
       </div>
       <a
-        href="https://lkarow.github.io/meet/privacy.html"
+        href="https://vporshnev.github.io/meet/privacy.html"
         rel="nofollow noopener"
       >
         Privacy policy
