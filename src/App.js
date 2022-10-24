@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    offlineText: [],
+    offlineText: '',
     showWelcomeScreen: undefined
   }
 
