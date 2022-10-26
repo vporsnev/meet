@@ -28,7 +28,7 @@ const EventGenre = ({ events }) => {
                 cy={200}
                 labelLine={false}
                 outerRadius={80}
-                fill="#8884d8"
+                fill="#88d5b0"
                 dataKey="value"
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
                 </Pie>
