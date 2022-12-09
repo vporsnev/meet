@@ -90,7 +90,7 @@ class App extends Component {
         <OfflineAlert text={this.state.offlineText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numOfEvents={this.state.numOfEvents} updateEvents={this.updateEvents}/>
-        <h4>Events in each city</h4>
+        <h4>Search coding events in your city!</h4>
         <div className="data-vis-wrapper">
         <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400} >
